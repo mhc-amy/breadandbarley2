@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body>
+    
+    <!--Events-->
+    <div id="events" data-role="page">
+
+        <!--Header-->
+        <div data-role="header" >
+            <script>$.mobile.allowCrossDomainPages = true;</script>
+
+        </div>
+         <!--Content-->
+        <div data-role="content" class="content" style="background-image:url(styles/images/BNBtrans-iphone-portrait.png)">
+            <h1>
+                <a href="#page-home" data-transition="fade"><center><img src="styles/images/triangle_button.png" align="center"></center></a>
+                Events</h1>
+            <div>  
+            <script>
+                $('#events').on('pageint', function(){
+                var request = $.ajax({
+                    url: "http://humblydesign.com/send.php", 
+                    type: "GET",
+                    data: { content: "content"},
+                    dataType: "html"
+                });
+                
+                
+                request.done(function( msg ) {
+                console.log(msg);
+                $("body").html(msg); // Output the message straight to the body
+                });
+
+                request.fail(function( jqXHR, textStatus ) {
+                alert( "Request failed: " + textStatus );
+                });
+               });
+            </script>
+            </div>            
+        </div>       
+        <!--Footer-->
+        <div data-role="footer" data-position="fixed" data-id="oneFooter">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu" data-transition="fade"><img src="styles/images/Menu.png" ></a></li>  
+                    <li><a href="#drinks" data-transition="fade"><img src="styles/images/Drinks.png"></a></li>
+                    <li><a href="#events" data-transition="fade" class="ui-btn-active ui-state-persist"><img src="styles/images/Events.png"></a></li>   
+                    <li><a href="#reservations" data-transition="fade"><img src="styles/images/Reservations.png"></a></li>                                        
+                </ul>    
+             </div>
+        </div>
+    </div>
+    
+</body>
+<html>

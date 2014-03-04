@@ -16,6 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+function initPushwoosh()
+{
+    var pushNotification = window.plugins.pushNotification;
+    pushNotification.onDeviceReady();
+ 
+    pushNotification.registerDevice({ projectid: "1029242162969", appid : "CBD1A-32FFA" },
+        function(status) {
+            var pushToken = status;
+            console.warn('push token: ' + pushToken);
+        },
+        function(status) {
+            console.warn(JSON.stringify(['failed to register ', status]));
+        }
+    );
+ 
+    document.addEventListener('push-notification', function(event) {
+        //var title = event.notification.title;
+        var userData = event.notification.userdata;
+        var msg = event.notification.message;
+                                 
+        if(typeof(userData) != "undefined") {
+            console.warn('user data: ' + JSON.stringify(userData));
+        }
+                                     
+        navigator.notification.alert(msg);
+        navigator.notification.vibrate(1000)
+    });
+}
+
+
 var app = {
     // Application Constructor
     initialize: function() {

@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<head>
+    <meta content="text/html; charset=UTF-8" />
+    <meta name="format-detection"/> 
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height," /> 
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="css/animations.css" />   
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    
+	<title>Bread and Barley</title>
+</head>
+<body style="background-image:url('img/address-iphone-portrait.png'); background-position=center top; text-align:center; width:100%">	
+     <div id="main" >
+
+        <!--Content-->
+         <div id="blank"></div>
+
+  
+   <!--Menu-->
+<!--
+     <div id="menu" class="pullUp">
+
+        <div style="background-image:url(img/trans-iphone-portrait.png)" class="pullUp">
+            <h1>
+                <a href="index.html" ><center><img src="img/triangle_button.png" align="center"></center></a>
+                Menu</h1>
+            <h2>
+                <ul text-decoration="none">
+                    <li><a href="#salads" data-transition="slideup">Salads</a></li>
+                    <li><a href="#starters" data-transition="fade">Starters</a></li>
+                    <li><a href="#pub_burgers" data-transition="fade">Pub Burgers</a></li> 
+                    <li><a href="#paninis_and_sandwiches" data-transition="fade">Paninis and Sandwiches</a></li>
+                    <li><a href="#pub_entrees" data-transition="slideup">Pub Entrees</a></li>                     
+                </ul>
+            </h2>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
-</html>
+    </div>
+
+  -->  
+    
+    <footer>
+        <div id="fixed_footer">
+             <ul>
+                <li style="display:inline"><a href="menu.html"><img src="img/Menu.png"></a></li>  
+                <li style="display:inline"><a href="drinks.html"><img src="img/Drinks.png"></a></li>
+                <li style="display:inline"><a href="events.html"><img src="img/Events.png"></a></li>   
+                <li style="display:inline"><a href="reservations.html"><img src="img/Reservations.png"></a></li>                                        
+            </ul>    
+         </div>
+    </footer>
+    </div>
+    <script>
+	$('#menu').click(function() {
+		$(this).addClass("pullUp");
+	});
+</script>
+</body>
+<html>

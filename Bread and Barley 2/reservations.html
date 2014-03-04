@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body>
+     
+    <!--Reservations-->
+    <div id="reservations" data-role="page">
+
+        <!--Header-->
+        <div data-role="header" >
+            <script>$.mobile.allowCrossDomainPages = true;</script>
+        </div>
+        
+        <!--Content-->
+        <div data-role="content" class="content" style="background-image:url(styles/images/BNBtrans-iphone-portrait.png)">
+            <h1>
+                <a href="#page-home" data-transition="fade"><center><img src="styles/images/triangle_button.png" align="center"></center></a>
+                Reservations</h1>
+            <form action="http://humblydesign.com/send.php">
+            <fieldset id="form">
+            <div>
+                <label for="name"><strong>NAME</strong></label>
+                <input type="text" id="name" name="name">
+                </div>
+            <div>
+                <label for="guests"><strong>HOW MANY GUESTS</strong></label>
+                <input type="number" id="guests" name="guests">
+            </div>   
+            <div>
+                <label for="date"><strong>DATE</strong></label>
+                <input type="date" id="date" name="date">
+            </div>     
+            <div>
+                <label for="time"><strong>TIME</strong></label>
+                <input type="time" id="time" name="time">
+            </div>        
+            <div>
+                <label for="phone"><strong>PHONE NUMBER</strong></label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div>
+                <label for="email"><strong>EMAIL</strong></label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <input type="submit" name="submit" value="SEND">
+            </div>
+        </fieldset>    
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("form").submit(function() {
+                    if ($("#name").val() === ""){
+                        alert("Please enter your name");
+                        event.preventDefault();
+                        return false;
+                    }
+                    if ($("#guests").val() === ""){
+                        alert("Please enter the number of guests");
+                        event.preventDefault();
+                        return false;
+                    }
+                    if ($("#date").val() === ""){
+                        alert("Please enter a date");
+                        event.preventDefault();
+                        return false;
+                    
+                    }   
+                    if ($("#name").val() === ""){
+                        alert("Please enter a time");
+                        event.preventDefault();
+                        return false;
+                    }     
+                    if ($("#phone").val() === ""){
+                        alert("Please enter your phone number for confirmation");
+                        event.preventDefault();
+                        return false;
+                    }  else {                 
+                        alert("Sending reservation! Please wait for confirmation");
+                        //data to be sent to server
+                        get_data = {'name':name, 'guests':guests, 'date':date, 'time':time, 'phone':phone};
+            
+                        //Ajax post data to server
+                        $.get('http://humblydesign.com/send.php', get_data, function(data){  
+                            //reset values in all input fields
+                            $('#form input').val(''); 
+                            $('#form textarea').val(''); 
+                
+                            }).fail(function(err) {  //load any error data
+                                $("#result").hide().html('<div class="error">'+err.statusText+'</div>').slideDown();
+                                });
+                        }
+                    });                    
+                    return false;
+                });
+        </script>
+     </div>       
+    </div>
+    
+        <!--Footer-->
+        <div data-role="footer" data-position="fixed" data-id="oneFooter">
+            <div data-role="navbar">
+                <ul>                    
+                    <li><a href="#menu" data-transition="fade"><img src="styles/images/Menu.png" ></a></li>  
+                    <li><a href="#drinks" data-transition="fade"><img src="styles/images/Drinks.png"></a></li>
+                    <li><a href="#events" data-transition="fade"><img src="styles/images/Events.png"></a></li>   
+                    <li><a href="#reservations" data-transition="fade" class="ui-btn-active ui-state-persist"><img src="styles/images/Reservations.png"></a></li>                                        
+                </ul>    
+             </div>
+        </div>
+    
+</body>
+<html>
