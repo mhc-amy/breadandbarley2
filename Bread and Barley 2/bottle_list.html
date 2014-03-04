@@ -3,25 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height," />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="css/animations.css" /> 
+    <link rel="text/javascript" href="js/jquery-1.11.0.min.js" />
 </head>
-<body>
-   <!--Bottle List-->
-    <div id="bottle" data-role="page">
 
-        <!--Header-->
-        <div data-role="header" >
-        </div>
-        
-        <!--Content-->
-        <div data-role="content" class="content" style="background-image:url(styles/images/BNBtrans-iphone-portrait.png)">
-            <h1>
-                <a href="#drinks" data-transition="fade"><center><img src="styles/images/triangle_button.png" align="center"></center></a>
-                Bottle List   
-            </h1> 
+<body style="background-image:url(img/address-iphone-portrait.png); width:100%">
+    <div class="pullUp" style="background-image:url('img/trans-iphone-portrait.png'); position:relative; color:#681200; text-align:center; width:100%">
+        <h1><a href="drinks.html" id="btn"><center><img src="img/triangle_button.png" align="center"></center></a>
+            Bottle List</h1>
             <div id="list">
-                <center>Bottle List can Change Daily</center>
+                <center><em>Bottle List can change daily.</em></center><br>
                 <ul>
                     <li>Uinta Baba</li>
                     <li>Aprihop
@@ -34,22 +27,17 @@
                     <li>Cucapa Chupacabra</li> 
                 </ul>
             </div>
+        <br><br><br><br><br><br><br><br><br><br><br>
         </div>
-        
-        <!--Footer-->
-        <div data-role="footer" data-position="fixed" data-id="oneFooter">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#menu" data-transition="fade"><img src="styles/images/Menu.png" ></a></li>  
-                    <li><a href="#drinks" data-transition="fade"><img src="styles/images/Drinks.png"></a></li>
-                    <li><a href="#events" data-transition="fade"><img src="styles/images/Events.png"></a></li>   
-                    <li><a href="#reservations" data-transition="fade"><img src="styles/images/Reservations.png"></a></li>                                        
-                </ul>    
-             </div>
-        </div>
-    </div>
-
-
-    
+    <footer>
+        <div id="fixed_footer">
+             <ul>
+                <li style="display:inline"><a href="menu.html"><img src="img/Menu.png"></a></li>  
+                <li style="display:inline"><a href="drinks.html"><img src="img/Drinks.png"></a></li>
+                <li style="display:inline"><a href="events.html"><img src="img/Events.png"></a></li>   
+                <li style="display:inline"><a href="reservations.html"><img src="img/Reservations.png"></a></li>                                        
+            </ul>    
+         </div>
+    </footer>
 </body>
 <html>

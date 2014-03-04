@@ -32,18 +32,14 @@ function initPushwoosh()
         }
     );
  
-    document.addEventListener('push-notification', function(event) {
-        //var title = event.notification.title;
-        var userData = event.notification.userdata;
-        var msg = event.notification.message;
-                                 
-        if(typeof(userData) != "undefined") {
-            console.warn('user data: ' + JSON.stringify(userData));
-        }
-                                     
-        navigator.notification.alert(msg);
-        navigator.notification.vibrate(1000)
-    });
+document.addEventListener('push-notification', function(event) {
+    var title = event.notification.title;
+    var userData = event.notification.userdata;
+    var msg = event.notification.message;
+
+    console.warn('user data: ' + JSON.stringify(userData));
+    navigator.notification.alert(msg);
+});
 }
 
 

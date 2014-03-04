@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/animations.css" />   
     
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/PushNotification.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script type="text/javascript">
@@ -16,34 +17,10 @@
     
 	<title>Bread and Barley</title>
 </head>
-<body style="background-image:url('img/address-iphone-portrait.png'); background-position=center top; text-align:center; width:100%">	
-     <div id="main" >
+<body onload="init();" style="background-image:url('img/address-iphone-portrait.png'); background-position=center top; text-align:center; width:100%">	
+     <div id="main" > 
 
-        <!--Content-->
-         <div id="blank"></div>
 
-  
-   <!--Menu-->
-<!--
-     <div id="menu" class="pullUp">
-
-        <div style="background-image:url(img/trans-iphone-portrait.png)" class="pullUp">
-            <h1>
-                <a href="index.html" ><center><img src="img/triangle_button.png" align="center"></center></a>
-                Menu</h1>
-            <h2>
-                <ul text-decoration="none">
-                    <li><a href="#salads" data-transition="slideup">Salads</a></li>
-                    <li><a href="#starters" data-transition="fade">Starters</a></li>
-                    <li><a href="#pub_burgers" data-transition="fade">Pub Burgers</a></li> 
-                    <li><a href="#paninis_and_sandwiches" data-transition="fade">Paninis and Sandwiches</a></li>
-                    <li><a href="#pub_entrees" data-transition="slideup">Pub Entrees</a></li>                     
-                </ul>
-            </h2>
-        </div>
-    </div>
-
-  -->  
     
     <footer>
         <div id="fixed_footer">
@@ -57,9 +34,10 @@
     </footer>
     </div>
     <script>
-	$('#menu').click(function() {
-		$(this).addClass("pullUp");
-	});
+    function init() {
+    document.addEventListener("deviceready", initPushwoosh, true);
+
+   }
 </script>
 </body>
 <html>
